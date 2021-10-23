@@ -1,0 +1,42 @@
+// Xhr=>
+// 1.Initialize a xml http request
+var xhr = new XMLHttpRequest();
+
+// GET=>Read the data
+// Post=>send the data
+// put =>Update the data
+// Delete =>deleteing the data
+xhr.open("GET", "https://jsonplaceholder.typicode.com/comment");
+
+//Send the request to server
+xhr.send();
+
+//set up listners to process the request
+xhr.onload = function () {
+  //please provide me the data if my request lies in
+  // status code of 200 to 300
+
+  if (xhr.status >= 200 && xhr.status <= 300) {
+    let data = JSON.parse(this.response);
+    console.log(data);
+  } else {
+    console.log(this.response);
+  }
+};
+
+// Fetch API
+// aynch,await
+
+// 1.id
+// 2.Name
+// 3.email
+// 4.Address:City
+// 5.Phone
+// 6.Company Name
+
+// Id: 1;
+// Name: "Leanne Graham";
+// Email: "Sincere@april.biz";
+// city:Gwenborough
+// phone": "1-770-736-8031 x56442"
+// CompanyName:name": "Romaguera-Crona",
